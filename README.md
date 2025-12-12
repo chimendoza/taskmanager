@@ -12,7 +12,7 @@ Instalación en Dev:
 1 Copiar .env.dev.example a .env
 2 Instalar los módulos de node
 3 aplicar migraciones `npx prisma migrate dev --name init` 
-4 ejecutar `npm prisma generate` para generar el cliente prisma
+4 ejecutar `npx prisma generate` para generar el cliente prisma
 5 aplicar el seed para insertar un usuario inicial en la tabla user `npx prisma db seed`
 6 ejecutar la aplicación en modo dev 
 

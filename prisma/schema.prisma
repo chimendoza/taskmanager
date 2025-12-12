@@ -1,0 +1,32 @@
+
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  username String   @unique
+  password String
+  token    String?
+  created  DateTime @default(now())
+  updated  DateTime @updatedAt
+  tasks    Task[]
+}
+
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  status      String
+  created     DateTime @default(now())
+  updated     DateTime @updatedAt
+
+  
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+}
